@@ -1,0 +1,16 @@
+
+
+/* 1. Limpia los márgenes que el navegador le pone al body por defecto */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+      overflow-y: hidden;
+    background-color: #0f172a; /* Evita el parpadeo blanco al cargar */
+}
+
+/* 2. Asegura que todos los elementos calculen bien sus tamaños con el padding */
+* {
+    box-sizing: border-box;
+}

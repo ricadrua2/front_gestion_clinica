@@ -1,0 +1,176 @@
+/* Layout base idéntico al Login */
+.citas-page-container {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    padding: 40px 24px;
+    background-color: #0f172a;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.citas-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Ondas de Fondo */
+.wave-bg {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.12;
+    animation: slowDrift 25s infinite linear;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.wave-1 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    top: -10%;
+    left: -20%;
+}
+
+.wave-2 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, #10b981 0%, #065f46 100%);
+    bottom: -10%;
+    right: -20%;
+    animation-direction: reverse;
+}
+
+.page-header {
+    margin-bottom: 32px;
+}
+
+/* Tarjeta Glassmorphism */
+.glass-card {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.01) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border-radius: 16px !important;
+}
+
+.appointment-row-card {
+    margin-bottom: 24px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.appointment-row-card:hover {
+    border-color: rgba(59, 130, 246, 0.3) !important;
+    transform: translateY(-2px);
+}
+
+/* Fila superior de información */
+.appointment-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.info-tag {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    color: #e2e8f0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Datos del Doctor */
+.doctor-info-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    background: rgba(15, 23, 42, 0.3);
+    padding: 10px 16px;
+    border-radius: 10px;
+}
+
+.doctor-icon {
+    font-size: 18px;
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.section-inline-label {
+    display: block;
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Grilla de diagnósticos y recetas */
+.clinical-details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .clinical-details-grid {
+        grid-template-columns: 1fr 1fr; /* Se divide en dos columnas en pantallas medianas/grandes */
+    }
+}
+
+.clinical-data-block {
+    background: rgba(15, 23, 42, 0.45);
+    padding: 16px;
+    border-radius: 12px;
+    border-left: 3px solid #475569;
+}
+
+.clinical-data-block.recommendation-border {
+    border-left-color: #3b82f6; /* Resalta las recomendaciones del doctor en azul */
+}
+
+.clinical-label {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.clinical-label.highlight-blue {
+    color: #60a5fa;
+}
+
+.clinical-text {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+.empty-card {
+    padding: 40px;
+    text-align: center;
+}
+
+@keyframes slowDrift {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
