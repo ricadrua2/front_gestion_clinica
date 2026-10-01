@@ -1,7 +1,7 @@
 import { Button, Card, Form, Input, Typography, message } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useAuth } from "../auth/authContext";
-import "./Login.css";
+import "./login.css";
 import { useNavigate } from "react-router-dom"; // <
 import api from "../api/axios";
 
