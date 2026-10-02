@@ -40,13 +40,14 @@ export default function DashboardLayout() {
                         position: "fixed",
                         top: 16,
                         left: 16,
-                        zIndex: 1000,
+                        zIndex: 10000,
                         width: 45,
                         height: 45,
                         borderRadius: 8,
                     }}
                 />
             )}
+
             <Sider
                 collapsible
                 trigger={null}
@@ -66,20 +67,36 @@ export default function DashboardLayout() {
                 }}
             >
 
+                {/* ZONA SUPERIOR DEL MENÚ */}
                 {esMovil && (
-                    <Button
-                        type="text"
-                        icon={<MenuFoldOutlined />}
-                        onClick={() => setCollapsed(true)}
+                    <div
                         style={{
-                            position: "absolute",
-                            top: 16,
-                            right: 10,
-                            zIndex: 1100,
-                            color: "#fff",
+                            height: 60,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "flex-end",
+                            paddingRight: 10,
                         }}
-                    />
+                    >
+                        <Button
+                            type="text"
+                            icon={<MenuFoldOutlined />}
+                            onClick={() => setCollapsed(true)}
+                            style={{
+                                color: "#fff",
+                                fontSize: 20,
+                                width: 42,
+                                height: 42,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                background: "rgba(255,255,255,0.10)",
+                                borderRadius: 8,
+                            }}
+                        />
+                    </div>
                 )}
+
 
                 {/* Logo */}
                 <div

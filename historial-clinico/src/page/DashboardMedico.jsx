@@ -158,15 +158,36 @@ const DashboardMedico = () => {
             }}
         >
             <Content style={{ padding: 24 }}>
-                <Title
-                    level={2}
+                <div
                     style={{
-                        color: "#f8fafc",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        gap: 12,
+                        marginBottom: 24,
+                        flexWrap: "wrap",
                     }}
                 >
-                    Pacientes
-                </Title>
+                    <Title
+                        level={2}
+                        style={{
+                            color: "#f8fafc",
+                            margin: 0,
+                        }}
+                    >
+                        Pacientes
+                    </Title>
 
+                    {esMedico && (
+                        <Button
+                            type="primary"
+                            icon={<UserAddOutlined />}
+                            onClick={() => setModalCitaOpen(true)}
+                        >
+                            Crear cita médica
+                        </Button>
+                    )}
+                </div>
                 {/* ======================================
                     BUSCADOR
                 ======================================= */}

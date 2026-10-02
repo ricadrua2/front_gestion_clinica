@@ -28,6 +28,7 @@ import {
 } from "react-router-dom";
 import api from "../api/axios";
 import ModalCitaMedica from "../componets/ModalCitaMedica";
+import { useAuth } from "../auth/authContext";
 const { Title, Text, Paragraph } = Typography;
 
 
@@ -53,7 +54,15 @@ export default function CitasScreen() {
     const [loading, setLoading] = useState(true);
 
     const [error, setError] = useState(null);
+    const { user } = useAuth();
 
+    
+    const esMedico = user?.groups?.some(
+        (group) => Number(group) === 1
+    );
+    console.log("USUARIO:", user);
+    console.log("GROUPS:", user?.groups);
+    console.log("ES MEDICO:", esMedico);
 
     useEffect(() => {
 
@@ -230,14 +239,14 @@ export default function CitasScreen() {
                             >
                                 {paciente.nombre}
                             </Text>
+                            {esMedico && (
                             <Button
                                 type="primary"
-                                onClick={() =>
-                                    setModalCitaOpen(true)
-                                }
+                                onClick={() => setModalCitaOpen(true)}
                             >
                                 Agregar cita médica
                             </Button>
+                        )}
                             <br />
 
                             <Text
